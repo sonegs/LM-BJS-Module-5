@@ -6,7 +6,7 @@ const store = [
     { id: 4, name: "Chicken", market: "Aldi", count: 2, price: 3.10, available: true, prime: false },
     { id: 5, name: "Strawberry", market: "Carrefour", count: 1, price: 4.90, available: true, prime: false },
     { id: 6, name: "Fish", market: "Alcampo", count: 1, price: 6.90, available: true, prime: false },
-    { id: 7, name: "Tomatoes", market: "DIA", count: 4, price: 0.40, available: true, prime: false },
+    { id: 7, name: "Tomatoes", market: "DIA", count: 4, price: 10.40, available: true, prime: false },
     { id: 8, name: "Watermelon", market: "Mercadona", count: 1, price: 2.50, available: true, prime: true }
 ];
 let total = 0;
@@ -38,6 +38,7 @@ function calcular() { // Suma el total del carrito de la compra
         total += store[i].price * store[i].count;
     }
     desc(total);
+    total = 0;
 }
 
 function desc(finalPrice) { // Hace un descuento del 5% si el total es mayor de 50 €
@@ -69,9 +70,8 @@ function isPrime(price) { // comprueba si todos los productos son Prime
         }
     }
     if (check == store.length) {
-        show.innerHTML += "<h4>" + price + " euros, gastos de envío cero</h4>";
+        show.innerHTML += "<h4>" + Math.round(price * 100) / 100 + " euros, gastos de envío cero</h4>";
     } else {
-
-        show.innerHTML += "<h4>" + price + " euros con gastos de envío</h4>";
+        show.innerHTML += "<h4>" + Math.round(price * 100) / 100 + " euros con gastos de envío</h4>";
     }
 }
