@@ -43,6 +43,7 @@ function calcular() { // Suma el total del carrito de la compra
 function desc(finalPrice) { // Hace un descuento del 5% si el total es mayor de 50 €
     if (finalPrice > 50) {
         discount = finalPrice * 0.05;
+        show.innerHTML += "<h5> Se ha hecho un descuento del 5% en su compra!</h5>";
         finalPrice -= discount;
         isPrime(finalPrice);
     } else {
