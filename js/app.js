@@ -70,8 +70,13 @@ function isPrime(price) { // comprueba si todos los productos son Prime
         }
     }
     if (check == store.length) {
-        show.innerHTML += "<h4>" + Math.round(price * 100) / 100 + " euros, gastos de envío cero</h4>";
+        show.innerHTML += "<h4>" + roundResult(price) + " euros, gastos de envío cero</h4>";
     } else {
-        show.innerHTML += "<h4>" + Math.round(price * 100) / 100 + " euros con gastos de envío</h4>";
+        show.innerHTML += "<h4>" + roundResult(price) + " euros con gastos de envío</h4>";
     }
+}
+
+function roundResult(price) { // Redondea el precio final a dos decimales
+    const result = Math.round(price * 100) / 100;
+    return result;
 }
