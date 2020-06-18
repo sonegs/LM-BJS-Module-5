@@ -76,7 +76,8 @@ function isPrime(price) { // comprueba si todos los productos son Prime
     }
 }
 
-function roundResult(price) { // Redondea el precio final a dos decimales
+// Redondea el precio final a dos decimales
+function roundResult(price) {
     const result = Math.round(price * 100) / 100;
     return result;
 }
